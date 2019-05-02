@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework">
       <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
@@ -98,6 +104,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\ClientTest.cs" />
+    <Compile Include="Business\MediaChannelTest.cs" />
+    <Compile Include="Business\CountryTest.cs" />
+    <Compile Include="Db\ClientTest.cs" />
+    <Compile Include="Db\SupplierTest.cs" />
+    <Compile Include="Db\MediaChannelTest.cs" />
+    <Compile Include="Db\CountryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Controllers\ValuesControllerTest.cs" />
@@ -109,6 +122,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OmniComMediaPlanner.Business\OmniComMediaPlanner.Business.csproj">
+      <Project>{994c37f0-6562-4c65-bbe1-c99834330240}</Project>
+      <Name>OmniComMediaPlanner.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OmniComMediaPlanner.Data\OmniComMediaPlanner.Data.csproj">
+      <Project>{b43ab734-ac33-4407-bbbd-75fce04d7339}</Project>
+      <Name>OmniComMediaPlanner.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OmniComMediaPlanner.Model\OmniComMediaPlanner.Model.csproj">
+      <Project>{e1ef94ad-ef62-41c8-9961-2aa3c0e78cc7}</Project>
+      <Name>OmniComMediaPlanner.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OmniComMediaPlanner\OmniComMediaPlanner.csproj">
       <Project>{319EA63E-7147-4F04-A66B-6972E2F0E4BB}</Project>
       <Name>OmniComMediaPlanner</Name>
