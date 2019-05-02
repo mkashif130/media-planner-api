@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OmniComMediaPlanner.Repository.DAL
 {
-    public class Supplier :IGet
+    public class Supplier : IGet
     {
         public IEnumerable<Model.IModel> Get()
         {
@@ -19,7 +19,12 @@ namespace OmniComMediaPlanner.Repository.DAL
                                 select c;
                     foreach (var item in query)
                     {
-                        suppliers.Add(new Model.SupplierModel { Id = item.Id, MediaChannelId = item.MediaChannel_Id, Supplier = item.Supplier1 });
+                        suppliers.Add(new Model.SupplierModel
+                        {
+                            Id = item.Id,
+                            Channel = new Model.MediaChannel { Id = item.MediaChannel.Id, Channel = item.MediaChannel.Channel },
+                            Supplier = item.Supplier1
+                        });
                     }
                 }
             }

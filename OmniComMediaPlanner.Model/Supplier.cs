@@ -10,6 +10,6 @@ namespace OmniComMediaPlanner.Model
     {
         public int Id { get; set; }
         public string Supplier { get; set; }
-        public int MediaChannelId { get; set; }
+        public MediaChannel Channel { get; set; }
     }
 }
