@@ -16,7 +16,7 @@ namespace OmniComMediaPlanner.Tests.Business
         {
             Data.IGet db = new Data.DAL.Country();
             OmniComMediaPlanner.Business.Country country = new OmniComMediaPlanner.Business.Country(db);
-            IEnumerable<Model.IModel> countries = country.GetCountries();
+            IEnumerable<Model.IModel> countries = country.Get();
             Assert.AreNotEqual(countries.Count(), 0);
         }
     }

@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="IBusiness.cs" />
+    <Compile Include="Supplier.cs" />
     <Compile Include="MediaChannel.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

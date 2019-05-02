@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace OmniComMediaPlanner.Data.DAL
 {
-    public class Supplier 
+    public class Supplier :IGet
     {
-        public IEnumerable<OmniComMediaPlanner.Data.Supplier> GetSuppliers()
+        public IEnumerable<Model.IModel> Get()
         {
-            IEnumerable<Data.Supplier> suppliers = null;
+            List<Model.IModel> suppliers = new List<Model.IModel>();
             try
             {
                 using (var db = new MediaPlannerEntities())
                 {
                     var query = from c in db.Suppliers
                                 select c;
-
-                    suppliers = query.ToList();
+                    foreach (var item in query)
+                    {
+                        suppliers.Add(new Model.SupplierModel { Id = item.Id, MediaChannelId = item.MediaChannel_Id, Supplier = item.Supplier1 });
+                    }
                 }
             }
             catch (Exception ex)

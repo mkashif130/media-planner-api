@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\ClientTest.cs" />
+    <Compile Include="Business\SupplierTest.cs" />
     <Compile Include="Business\MediaChannelTest.cs" />
     <Compile Include="Business\CountryTest.cs" />
     <Compile Include="Db\ClientTest.cs" />
