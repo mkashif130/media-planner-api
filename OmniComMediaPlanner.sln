@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniComMediaPlanner", "OmniComMediaPlanner\OmniComMediaPlanner.csproj", "{319EA63E-7147-4F04-A66B-6972E2F0E4BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniComMediaPlanner.Tests", "OmniComMediaPlanner.Tests\OmniComMediaPlanner.Tests.csproj", "{1422DC33-7475-4BF9-956F-0113DCFB28C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{319EA63E-7147-4F04-A66B-6972E2F0E4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{319EA63E-7147-4F04-A66B-6972E2F0E4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{319EA63E-7147-4F04-A66B-6972E2F0E4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{319EA63E-7147-4F04-A66B-6972E2F0E4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1422DC33-7475-4BF9-956F-0113DCFB28C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1422DC33-7475-4BF9-956F-0113DCFB28C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1422DC33-7475-4BF9-956F-0113DCFB28C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1422DC33-7475-4BF9-956F-0113DCFB28C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {209E8AA7-CBB9-4442-A099-54A3EB3B2C36}
+	EndGlobalSection
+EndGlobal
