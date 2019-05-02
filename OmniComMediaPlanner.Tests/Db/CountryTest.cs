@@ -14,7 +14,7 @@ namespace OmniComMediaPlanner.Tests.Db
         [TestMethod]
         public void ListCountries()
         {
-            OmniComMediaPlanner.Data.DAL.Country country = new Data.DAL.Country();
+            OmniComMediaPlanner.Repository.DAL.Country country = new Repository.DAL.Country();
             IEnumerable<Model.IModel> countries = country.Get();
             Assert.AreNotEqual(countries.Count(), 0);
         }

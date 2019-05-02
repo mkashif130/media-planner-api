@@ -14,9 +14,9 @@ namespace OmniComMediaPlanner.Tests.Business
         [TestMethod]
         public void ListClients()
         {
-            Data.IGet db = new Data.DAL.Client();
-            OmniComMediaPlanner.Business.Client country = new OmniComMediaPlanner.Business.Client(db);
-            IEnumerable<Model.IModel> clients = country.GetClients();
+            Repository.IGet db = new Repository.DAL.Client();
+            OmniComMediaPlanner.Process.ClientProcess country = new OmniComMediaPlanner.Process.ClientProcess(db);
+            IEnumerable<Model.IModel> clients = country.Get();
             Assert.AreNotEqual(clients.Count(), 0);
         }
     }

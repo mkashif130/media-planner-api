@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OmniComMediaPlanner.Business 
+namespace OmniComMediaPlanner.Process 
 {
-    public class Country : IConfigurationalBusiness
+    public class CountryProcess : IConfigurational
     {
-        private Data.IGet _db;
-        public Country(Data.IGet db)
+        private Repository.IGet _db;
+        public CountryProcess(Repository.IGet db)
         {
             _db = db;
         }

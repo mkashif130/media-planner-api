@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OmniComMediaPlanner.Business
+namespace OmniComMediaPlanner.Process
 {
-    public interface IConfigurationalBusiness
+    public interface IConfigurational
     {
          IEnumerable<Model.IModel> Get();
     }

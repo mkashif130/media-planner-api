@@ -8,12 +8,11 @@ using System.Web.Mvc;
 
 namespace OmniComMediaPlanner.Controllers
 {
-    public class CountryController : ApiController
+    public class MediaChannelController : ApiController
     {
         private Process.IConfigurational _bl = null;
-        public CountryController(Process.IConfigurational bl)
+        public MediaChannelController(Process.IConfigurational bl)
         {
-
             _bl = bl;
         }
 

@@ -7,8 +7,8 @@
     <ProjectGuid>{994C37F0-6562-4C65-BBE1-C99834330240}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OmniComMediaPlanner.Business</RootNamespace>
-    <AssemblyName>OmniComMediaPlanner.Business</AssemblyName>
+    <RootNamespace>OmniComMediaPlanner.Process</RootNamespace>
+    <AssemblyName>OmniComMediaPlanner.Process</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -48,17 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
+    <Compile Include="ClientProcess.cs" />
     <Compile Include="IBusiness.cs" />
-    <Compile Include="Supplier.cs" />
-    <Compile Include="MediaChannel.cs" />
-    <Compile Include="Country.cs" />
+    <Compile Include="SupplierProcess.cs" />
+    <Compile Include="MediaChannelProcess.cs" />
+    <Compile Include="CountryProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OmniComMediaPlanner.Data\OmniComMediaPlanner.Data.csproj">
+    <ProjectReference Include="..\OmniComMediaPlanner.Data\OmniComMediaPlanner.Repository.csproj">
       <Project>{b43ab734-ac33-4407-bbbd-75fce04d7339}</Project>
-      <Name>OmniComMediaPlanner.Data</Name>
+      <Name>OmniComMediaPlanner.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\OmniComMediaPlanner.Model\OmniComMediaPlanner.Model.csproj">
       <Project>{e1ef94ad-ef62-41c8-9961-2aa3c0e78cc7}</Project>

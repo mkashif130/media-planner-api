@@ -14,7 +14,7 @@ namespace OmniComMediaPlanner.Tests.Db
         [TestMethod]
         public void ListSuppliers()
         {
-            OmniComMediaPlanner.Data.DAL.Supplier supplier = new Data.DAL.Supplier();
+            OmniComMediaPlanner.Repository.DAL.Supplier supplier = new Repository.DAL.Supplier();
             IEnumerable<Model.IModel> suppliers = supplier.Get();
             Assert.AreNotEqual(suppliers.Count(), 0);
         }

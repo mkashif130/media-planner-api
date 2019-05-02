@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OmniComMediaPlanner.Business
+namespace OmniComMediaPlanner.Process
 {
-    public class Supplier
+    public class SupplierProcess :IConfigurational
     {
-        private Data.IGet _db;
-        public Supplier(Data.IGet db)
+        private Repository.IGet _db;
+        public SupplierProcess(Repository.IGet db)
         {
             _db = db;
         }
-        public IEnumerable<Model.IModel> GetSuppliers()
+        public IEnumerable<Model.IModel> Get()
         {
             return _db.Get();
         }

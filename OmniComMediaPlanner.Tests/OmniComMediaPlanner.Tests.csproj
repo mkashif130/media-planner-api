@@ -123,13 +123,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OmniComMediaPlanner.Business\OmniComMediaPlanner.Business.csproj">
+    <ProjectReference Include="..\OmniComMediaPlanner.Business\OmniComMediaPlanner.Process.csproj">
       <Project>{994c37f0-6562-4c65-bbe1-c99834330240}</Project>
-      <Name>OmniComMediaPlanner.Business</Name>
+      <Name>OmniComMediaPlanner.Process</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OmniComMediaPlanner.Data\OmniComMediaPlanner.Data.csproj">
+    <ProjectReference Include="..\OmniComMediaPlanner.Data\OmniComMediaPlanner.Repository.csproj">
       <Project>{b43ab734-ac33-4407-bbbd-75fce04d7339}</Project>
-      <Name>OmniComMediaPlanner.Data</Name>
+      <Name>OmniComMediaPlanner.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\OmniComMediaPlanner.Model\OmniComMediaPlanner.Model.csproj">
       <Project>{e1ef94ad-ef62-41c8-9961-2aa3c0e78cc7}</Project>

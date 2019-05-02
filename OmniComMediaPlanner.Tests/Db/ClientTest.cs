@@ -14,7 +14,7 @@ namespace OmniComMediaPlanner.Tests.Db
         [TestMethod]
         public void ListClients()
         {
-            OmniComMediaPlanner.Data.DAL.Client client = new Data.DAL.Client();
+            OmniComMediaPlanner.Repository.DAL.Client client = new Repository.DAL.Client();
             IEnumerable<Model.IModel> clients = client.Get();
             Assert.AreNotEqual(clients.Count(), 0);
         }

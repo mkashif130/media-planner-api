@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OmniComMediaPlanner.Business
+namespace OmniComMediaPlanner.Process
 {
-    public class MediaChannel
+    public class ClientProcess : IConfigurational
     {
-        private Data.IGet _db;
-        public MediaChannel(Data.IGet db)
+        private Repository.IGet _db;
+        public ClientProcess(Repository.IGet db)
         {
             _db = db;
         }
-        public IEnumerable<Model.IModel> GetMediaChannels()
+        public IEnumerable<Model.IModel> Get()
         {
             return _db.Get();
         }

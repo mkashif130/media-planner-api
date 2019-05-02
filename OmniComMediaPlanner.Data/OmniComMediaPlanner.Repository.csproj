@@ -7,8 +7,8 @@
     <ProjectGuid>{B43AB734-AC33-4407-BBBD-75FCE04D7339}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OmniComMediaPlanner.Data</RootNamespace>
-    <AssemblyName>OmniComMediaPlanner.Data</AssemblyName>
+    <RootNamespace>OmniComMediaPlanner.Repository</RootNamespace>
+    <AssemblyName>OmniComMediaPlanner.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

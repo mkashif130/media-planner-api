@@ -14,8 +14,8 @@ namespace OmniComMediaPlanner.Tests.Business
         [TestMethod]
         public void ListCountries()
         {
-            Data.IGet db = new Data.DAL.Country();
-            OmniComMediaPlanner.Business.Country country = new OmniComMediaPlanner.Business.Country(db);
+            Repository.IGet db = new Repository.DAL.Country();
+            OmniComMediaPlanner.Process.CountryProcess country = new OmniComMediaPlanner.Process.CountryProcess(db);
             IEnumerable<Model.IModel> countries = country.Get();
             Assert.AreNotEqual(countries.Count(), 0);
         }

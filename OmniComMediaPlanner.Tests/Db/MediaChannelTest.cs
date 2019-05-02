@@ -14,7 +14,7 @@ namespace OmniComMediaPlanner.Tests.Db
         [TestMethod]
         public void ListMediaChannels()
         {
-            OmniComMediaPlanner.Data.DAL.MediaChannel mediaChannel = new Data.DAL.MediaChannel();
+            OmniComMediaPlanner.Repository.DAL.MediaChannel mediaChannel = new Repository.DAL.MediaChannel();
             IEnumerable<Model.IModel> mediaChannels = mediaChannel.Get();
             Assert.AreNotEqual(mediaChannels.Count(), 0);
         }

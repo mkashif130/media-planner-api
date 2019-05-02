@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OmniComMediaPlanner.Data.DAL
+namespace OmniComMediaPlanner.Repository.DAL
 {
     public class MediaChannel : IGet
     {

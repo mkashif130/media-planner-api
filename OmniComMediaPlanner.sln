@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniComMediaPlanner", "Omni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniComMediaPlanner.Tests", "OmniComMediaPlanner.Tests\OmniComMediaPlanner.Tests.csproj", "{1422DC33-7475-4BF9-956F-0113DCFB28C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniComMediaPlanner.Data", "OmniComMediaPlanner.Data\OmniComMediaPlanner.Data.csproj", "{B43AB734-AC33-4407-BBBD-75FCE04D7339}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniComMediaPlanner.Repository", "OmniComMediaPlanner.Data\OmniComMediaPlanner.Repository.csproj", "{B43AB734-AC33-4407-BBBD-75FCE04D7339}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniComMediaPlanner.Business", "OmniComMediaPlanner.Business\OmniComMediaPlanner.Business.csproj", "{994C37F0-6562-4C65-BBE1-C99834330240}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniComMediaPlanner.Process", "OmniComMediaPlanner.Business\OmniComMediaPlanner.Process.csproj", "{994C37F0-6562-4C65-BBE1-C99834330240}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniComMediaPlanner.Model", "OmniComMediaPlanner.Model\OmniComMediaPlanner.Model.csproj", "{E1EF94AD-EF62-41C8-9961-2AA3C0E78CC7}"
 EndProject

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OmniComMediaPlanner.Data
+namespace OmniComMediaPlanner.Repository
 {
     using System;
     using System.Data.Entity;

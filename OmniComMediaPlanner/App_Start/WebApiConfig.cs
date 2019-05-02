@@ -12,6 +12,7 @@ namespace OmniComMediaPlanner
     {
         public static void Register(HttpConfiguration config)
         {
+
             App_Start.AutofacConfig.Initialize(config);
             // Web API routes
             config.MapHttpAttributeRoutes();
