@@ -31,7 +31,7 @@ namespace OmniComMediaPlanner.Controllers
             }
 
 
-            return Request.CreateResponse(System.Net.HttpStatusCode.OK, Newtonsoft.Json.JsonConvert.SerializeObject(model));
+            return Request.CreateResponse(System.Net.HttpStatusCode.OK, model);
         }
     }
 }

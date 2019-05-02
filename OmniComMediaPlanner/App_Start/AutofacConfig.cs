@@ -22,11 +22,11 @@ namespace OmniComMediaPlanner.App_Start
         private static IContainer RegisterServices(ContainerBuilder builder)
         {
             //Register your Web API controllers.
-            builder.RegisterInstance(new CountryController(new Process.CountryProcess(new Repository.DAL.Country())));
+            builder.RegisterType<CountryController>().WithParameter("bl", (new Process.CountryProcess(new Repository.DAL.Country()))).InstancePerRequest();// (new Process.CountryProcess(new Repository.DAL.Country()))).InstancePerRequest();
 
-            builder.RegisterInstance(new ClientController(new Process.ClientProcess(new Repository.DAL.Client())));
-            builder.RegisterInstance(new MediaChannelController(new Process.MediaChannelProcess(new Repository.DAL.MediaChannel())));
-            builder.RegisterInstance(new SupplierController(new Process.SupplierProcess(new Repository.DAL.Supplier())));
+            builder.RegisterType<ClientController>().WithParameter("bl",new Process.ClientProcess(new Repository.DAL.Client())).InstancePerRequest();
+            builder.RegisterType<MediaChannelController>().WithParameter("bl",new Process.MediaChannelProcess(new Repository.DAL.MediaChannel())).InstancePerRequest();
+            builder.RegisterType<SupplierController>().WithParameter("bl",new Process.SupplierProcess(new Repository.DAL.Supplier())).InstancePerRequest();
 
             //Set the dependency resolver to be Autofac.  
             Container = builder.Build();
