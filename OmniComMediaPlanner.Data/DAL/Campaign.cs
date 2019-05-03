@@ -59,11 +59,17 @@ namespace OmniComMediaPlanner.Repository.DAL
                 {
                     using (var db = new MediaPlannerEntities())
                     {
+                        //for some reason, i am not able to pass client id from front end
+                        // autocomplete not working as expected
+                        //this needs to be fixed.
+                        Repository.Client clientEntity = db.Clients.FirstOrDefault(c => c.name.ToLower() == campaign.Client.ClientName.ToLower());
+                        Repository.Country countryEntity = db.Countries.FirstOrDefault(c => c.Name.ToLower() == campaign.Country.Country.ToLower());
                         Repository.Campaign campaignEntity = new Repository.Campaign
                         {
                             Budget = campaign.Budget,
-                            Client_Id = campaign.Client.Id,
-                            Country = campaign.Country.IsoCode,
+                           
+                            Client_Id = clientEntity.Id,
+                            Country =countryEntity.IsoCode,
                             From_Date = campaign.FromDate,
                             To_Date = campaign.ToDate,
 

@@ -15,6 +15,8 @@ namespace OmniComMediaPlanner
 
             App_Start.AutofacConfig.Initialize(config);
             // Web API routes
+            config.EnableCors();
+            
             config.MapHttpAttributeRoutes();
             config.Formatters.JsonFormatter.SupportedMediaTypes
     .Add(new MediaTypeHeaderValue("text/html"));

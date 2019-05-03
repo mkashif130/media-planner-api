@@ -4,10 +4,13 @@ using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Mvc;
 
 namespace OmniComMediaPlanner.Controllers
 {
+    [EnableCors(origins:"*",headers:"*",methods:"*")]
+
     public class CampaignController : ApiController
     {
         private Process.ICampaignProcess _bl = null;
@@ -35,7 +38,6 @@ namespace OmniComMediaPlanner.Controllers
             return Request.CreateResponse(System.Net.HttpStatusCode.OK, campaignId);
         }
 
-        [System.Web.Http.HttpGet()]
         [System.Web.Http.Route("api/campaign/get/{id?}")]
         public HttpResponseMessage Get(int id=0)
         {

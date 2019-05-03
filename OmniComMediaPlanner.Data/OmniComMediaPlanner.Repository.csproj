@@ -74,6 +74,7 @@
     <Compile Include="IAd.cs" />
     <Compile Include="ICampaign.cs" />
     <Compile Include="IGet.cs" />
+    <Compile Include="ISupplier.cs" />
     <Compile Include="MediaChannel.cs">
       <DependentUpon>OmniComMediaPlannerDataModel.tt</DependentUpon>
     </Compile>

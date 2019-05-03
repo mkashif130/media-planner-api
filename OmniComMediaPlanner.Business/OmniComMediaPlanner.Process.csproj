@@ -54,6 +54,7 @@
     <Compile Include="IBusiness.cs" />
     <Compile Include="IAdProcess.cs" />
     <Compile Include="ICampaignProcess.cs" />
+    <Compile Include="ISupplierProcess.cs" />
     <Compile Include="SupplierProcess.cs" />
     <Compile Include="MediaChannelProcess.cs" />
     <Compile Include="CountryProcess.cs" />
