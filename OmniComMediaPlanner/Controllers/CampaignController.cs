@@ -16,6 +16,8 @@ namespace OmniComMediaPlanner.Controllers
             _bl = bl;
         }
 
+
+
         [System.Web.Http.HttpPost]
         public HttpResponseMessage SaveCampaign(Model.CampaignMode campaignMode)
         {
@@ -33,9 +35,20 @@ namespace OmniComMediaPlanner.Controllers
             return Request.CreateResponse(System.Net.HttpStatusCode.OK, campaignId);
         }
 
-        public HttpResponseMessage Get()
+        [System.Web.Http.HttpGet()]
+        [System.Web.Http.Route("api/campaign/get/{id?}")]
+        public HttpResponseMessage Get(int id=0)
         {
-            return Request.CreateResponse(System.Net.HttpStatusCode.OK, "Hello");
+            IEnumerable<Model.CampaignMode> campaign = null;
+            try
+            {
+                campaign = _bl.GetCampaign(id);
+            }
+            catch (Exception)
+            {
+                //TODO:// Log error here
+            }
+            return Request.CreateResponse(System.Net.HttpStatusCode.OK, campaign);
         }
     }
 }

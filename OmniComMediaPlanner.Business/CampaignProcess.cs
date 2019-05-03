@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OmniComMediaPlanner.Model;
 
 namespace OmniComMediaPlanner.Process
 {
@@ -13,6 +14,12 @@ namespace OmniComMediaPlanner.Process
         {
             _db = db;
         }
+
+        public IEnumerable<CampaignMode> GetCampaign(int campaignId)
+        {
+            return _db.Get(campaignId);
+        }
+
         public int SaveCampaign(Model.CampaignMode campaign)
         {
             return _db.Save(campaign);

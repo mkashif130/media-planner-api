@@ -8,6 +8,7 @@ namespace OmniComMediaPlanner.Repository
 {
     public interface ICampaign
     {
-       int Save(Model.CampaignMode campaign);
+        int Save(Model.CampaignMode campaign);
+        IEnumerable<Model.CampaignMode> Get(int campaignId);
     }
 }

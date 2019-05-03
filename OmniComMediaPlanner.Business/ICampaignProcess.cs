@@ -9,5 +9,6 @@ namespace OmniComMediaPlanner.Process
     public interface ICampaignProcess
     {
         int SaveCampaign(Model.CampaignMode campaignMode);
+        IEnumerable<Model.CampaignMode> GetCampaign(int campaignId);
     }
 }

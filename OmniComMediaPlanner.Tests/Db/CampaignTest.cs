@@ -26,5 +26,15 @@ namespace OmniComMediaPlanner.Tests.Db
             int campaignId = client.Save(campaign);
             Assert.AreNotEqual(campaignId, 0);
         }
+
+        [TestMethod]
+        public void GetCampaign()
+        {
+            OmniComMediaPlanner.Repository.DAL.Campaign repo = new Repository.DAL.Campaign();
+
+            IEnumerable<Model.CampaignMode> campaign = repo.Get(1);
+
+            Assert.AreNotEqual(campaign.Count(), 0);
+        }
     }
 }
