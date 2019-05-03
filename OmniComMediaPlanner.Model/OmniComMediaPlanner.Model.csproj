@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Campaign.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="IModel.cs" />

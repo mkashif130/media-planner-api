@@ -29,5 +29,7 @@ namespace OmniComMediaPlanner.Repository
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ad> Ads { get; set; }
+        public virtual Client Client { get; set; }
+        public virtual Country Country1 { get; set; }
     }
 }

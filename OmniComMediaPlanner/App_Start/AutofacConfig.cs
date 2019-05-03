@@ -27,6 +27,7 @@ namespace OmniComMediaPlanner.App_Start
             builder.RegisterType<ClientController>().WithParameter("bl",new Process.ClientProcess(new Repository.DAL.Client())).InstancePerRequest();
             builder.RegisterType<MediaChannelController>().WithParameter("bl",new Process.MediaChannelProcess(new Repository.DAL.MediaChannel())).InstancePerRequest();
             builder.RegisterType<SupplierController>().WithParameter("bl",new Process.SupplierProcess(new Repository.DAL.Supplier())).InstancePerRequest();
+            builder.RegisterType<CampaignController>().WithParameter("bl", new Process.CampaignProcess(new Repository.DAL.Campaign())).InstancePerRequest();
 
             //Set the dependency resolver to be Autofac.  
             Container = builder.Build();

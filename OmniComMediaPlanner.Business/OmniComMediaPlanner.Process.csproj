@@ -48,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CampaignProcess.cs" />
     <Compile Include="ClientProcess.cs" />
     <Compile Include="IBusiness.cs" />
+    <Compile Include="ICampaignProcess.cs" />
     <Compile Include="SupplierProcess.cs" />
     <Compile Include="MediaChannelProcess.cs" />
     <Compile Include="CountryProcess.cs" />

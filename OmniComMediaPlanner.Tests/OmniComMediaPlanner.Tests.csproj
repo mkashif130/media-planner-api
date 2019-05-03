@@ -104,10 +104,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\CampaignTest.cs" />
     <Compile Include="Business\ClientTest.cs" />
     <Compile Include="Business\SupplierTest.cs" />
     <Compile Include="Business\MediaChannelTest.cs" />
     <Compile Include="Business\CountryTest.cs" />
+    <Compile Include="Db\CampaignTest.cs" />
     <Compile Include="Db\ClientTest.cs" />
     <Compile Include="Db\SupplierTest.cs" />
     <Compile Include="Db\MediaChannelTest.cs" />

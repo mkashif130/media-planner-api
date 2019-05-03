@@ -17,6 +17,8 @@
         <AssociationConnector Association="MediaPlannerModel.FK_Ad_MediaChannel" ManuallyRouted="false" />
         <AssociationConnector Association="MediaPlannerModel.FK_Ad_Supplier" ManuallyRouted="false" />
         <AssociationConnector Association="MediaPlannerModel.FK_Supplier_MediaChannel" ManuallyRouted="false" />
+        <AssociationConnector Association="MediaPlannerModel.FK_Campaign_Client" />
+        <AssociationConnector Association="MediaPlannerModel.FK_Campaign_Country" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MediaPlannerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MediaPlannerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Ad">
           <Key>
             <PropertyRef Name="Id" />
@@ -116,6 +116,30 @@ warning 6002: The table/view 'MediaPlanner.dbo.Campaign_Supplier' does not have 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Campaign_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Campaign" Type="Self.Campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Campaign">
+              <PropertyRef Name="Client_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Campaign_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Campaign" Type="Self.Campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="IsoCode" />
+            </Principal>
+            <Dependent Role="Campaign">
+              <PropertyRef Name="Country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Supplier_MediaChannel">
           <End Role="MediaChannel" Type="Self.MediaChannel" Multiplicity="1" />
           <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
@@ -157,13 +181,20 @@ warning 6002: The table/view 'MediaPlanner.dbo.Campaign_Supplier' does not have 
             <End Role="Supplier" EntitySet="Supplier" />
             <End Role="Ad" EntitySet="Ad" />
           </AssociationSet>
+          <AssociationSet Name="FK_Campaign_Client" Association="Self.FK_Campaign_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Campaign" EntitySet="Campaign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Campaign_Country" Association="Self.FK_Campaign_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Campaign" EntitySet="Campaign" />
+          </AssociationSet>
           <AssociationSet Name="FK_Supplier_MediaChannel" Association="Self.FK_Supplier_MediaChannel">
             <End Role="MediaChannel" EntitySet="MediaChannel" />
             <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MediaPlannerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -196,6 +227,8 @@ warning 6002: The table/view 'MediaPlanner.dbo.Campaign_Supplier' does not have 
           <Property Name="From_Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="To_Date" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Ads" Relationship="Self.FK_Ad_Campaign" FromRole="Campaign" ToRole="Ad" />
+          <NavigationProperty Name="Client" Relationship="MediaPlannerModel.FK_Campaign_Client" FromRole="Campaign" ToRole="Client" />
+          <NavigationProperty Name="Country1" Relationship="MediaPlannerModel.FK_Campaign_Country" FromRole="Campaign" ToRole="Country" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -203,6 +236,7 @@ warning 6002: The table/view 'MediaPlanner.dbo.Campaign_Supplier' does not have 
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Campaigns" Relationship="MediaPlannerModel.FK_Campaign_Client" FromRole="Client" ToRole="Campaign" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
@@ -210,6 +244,7 @@ warning 6002: The table/view 'MediaPlanner.dbo.Campaign_Supplier' does not have 
           </Key>
           <Property Name="IsoCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Campaigns" Relationship="MediaPlannerModel.FK_Campaign_Country" FromRole="Country" ToRole="Campaign" />
         </EntityType>
         <EntityType Name="MediaChannel">
           <Key>
@@ -326,7 +361,39 @@ warning 6002: The table/view 'MediaPlanner.dbo.Campaign_Supplier' does not have 
             <End Role="MediaChannel" EntitySet="MediaChannels" />
             <End Role="Supplier" EntitySet="Suppliers" />
           </AssociationSet>
+          <AssociationSet Name="FK_Campaign_Client" Association="MediaPlannerModel.FK_Campaign_Client">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Campaign" EntitySet="Campaigns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Campaign_Country" Association="MediaPlannerModel.FK_Campaign_Country">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Campaign" EntitySet="Campaigns" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Campaign_Client">
+          <End Type="MediaPlannerModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="MediaPlannerModel.Campaign" Role="Campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Campaign">
+              <PropertyRef Name="Client_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Campaign_Country">
+          <End Type="MediaPlannerModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="MediaPlannerModel.Campaign" Role="Campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="IsoCode" />
+            </Principal>
+            <Dependent Role="Campaign">
+              <PropertyRef Name="Country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

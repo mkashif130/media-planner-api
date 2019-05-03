@@ -65,10 +65,12 @@
     <Compile Include="Country.cs">
       <DependentUpon>OmniComMediaPlannerDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Campaign.cs" />
     <Compile Include="DAL\Client.cs" />
     <Compile Include="DAL\Supplier.cs" />
     <Compile Include="DAL\MediaChannel.cs" />
     <Compile Include="DAL\Country.cs" />
+    <Compile Include="ICampaign.cs" />
     <Compile Include="IGet.cs" />
     <Compile Include="MediaChannel.cs">
       <DependentUpon>OmniComMediaPlannerDataModel.tt</DependentUpon>
