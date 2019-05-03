@@ -65,11 +65,13 @@
     <Compile Include="Country.cs">
       <DependentUpon>OmniComMediaPlannerDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Ad.cs" />
     <Compile Include="DAL\Campaign.cs" />
     <Compile Include="DAL\Client.cs" />
     <Compile Include="DAL\Supplier.cs" />
     <Compile Include="DAL\MediaChannel.cs" />
     <Compile Include="DAL\Country.cs" />
+    <Compile Include="IAd.cs" />
     <Compile Include="ICampaign.cs" />
     <Compile Include="IGet.cs" />
     <Compile Include="MediaChannel.cs">
@@ -96,29 +98,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="OmniComMediaPlannerDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>OmniComMediaPlannerDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="OmniComMediaPlannerDataModel.edmx.diagram">
       <DependentUpon>OmniComMediaPlannerDataModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="OmniComMediaPlannerDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>OmniComMediaPlannerDataModel.Context.cs</LastGenOutput>
-      <DependentUpon>OmniComMediaPlannerDataModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="OmniComMediaPlannerDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OmniComMediaPlannerDataModel.edmx</DependentUpon>
-      <LastGenOutput>OmniComMediaPlannerDataModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -128,6 +116,18 @@
       <Project>{e1ef94ad-ef62-41c8-9961-2aa3c0e78cc7}</Project>
       <Name>OmniComMediaPlanner.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OmniComMediaPlannerDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OmniComMediaPlannerDataModel.edmx</DependentUpon>
+      <LastGenOutput>OmniComMediaPlannerDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OmniComMediaPlannerDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OmniComMediaPlannerDataModel.edmx</DependentUpon>
+      <LastGenOutput>OmniComMediaPlannerDataModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -18,6 +18,7 @@ namespace OmniComMediaPlanner.Repository
         public Campaign()
         {
             this.Ads = new HashSet<Ad>();
+            this.Campaign_Supplier = new HashSet<Campaign_Supplier>();
         }
     
         public int Id { get; set; }
@@ -31,5 +32,7 @@ namespace OmniComMediaPlanner.Repository
         public virtual ICollection<Ad> Ads { get; set; }
         public virtual Client Client { get; set; }
         public virtual Country Country1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign_Supplier> Campaign_Supplier { get; set; }
     }
 }

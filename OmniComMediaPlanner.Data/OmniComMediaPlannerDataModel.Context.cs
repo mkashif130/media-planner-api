@@ -27,10 +27,10 @@ namespace OmniComMediaPlanner.Repository
     
         public virtual DbSet<Ad> Ads { get; set; }
         public virtual DbSet<Campaign> Campaigns { get; set; }
+        public virtual DbSet<Campaign_Supplier> Campaign_Supplier { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<MediaChannel> MediaChannels { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
-        public virtual DbSet<Campaign_Supplier> Campaign_Supplier { get; set; }
     }
 }

@@ -65,12 +65,26 @@ namespace OmniComMediaPlanner.Repository.DAL
                             Client_Id = campaign.Client.Id,
                             Country = campaign.Country.IsoCode,
                             From_Date = campaign.FromDate,
-                            To_Date = campaign.ToDate
+                            To_Date = campaign.ToDate,
+
 
                         };
 
                         db.Campaigns.Add(campaignEntity);
                         db.SaveChanges();
+
+                        foreach (var item in campaign.Suppliers)
+                        {
+
+                            Repository.Campaign_Supplier campaign_Supplier = new Campaign_Supplier
+                            {
+                                Campaign_Id = campaignEntity.Id,
+                                Supplier_Id = item.Id
+                            };
+
+                            db.Campaign_Supplier.Add(campaign_Supplier);
+                            db.SaveChanges();
+                        }
                         campaignID = campaignEntity.Id;
                     }
 

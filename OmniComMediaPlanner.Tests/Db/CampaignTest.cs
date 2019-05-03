@@ -21,8 +21,11 @@ namespace OmniComMediaPlanner.Tests.Db
                 Client = new Model.Client { Id = 1 },
                 Country = new Model.CountryModel { IsoCode = "UAE" },
                 FromDate = DateTime.Now.AddDays(1),
-                ToDate = DateTime.Now.AddDays(30)
+                ToDate = DateTime.Now.AddDays(30),
+                Suppliers = new List<Model.SupplierModel> { new Model.SupplierModel { Id=1} }
             };
+
+           
             int campaignId = client.Save(campaign);
             Assert.AreNotEqual(campaignId, 0);
         }

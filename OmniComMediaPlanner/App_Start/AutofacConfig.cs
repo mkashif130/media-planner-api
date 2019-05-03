@@ -24,10 +24,11 @@ namespace OmniComMediaPlanner.App_Start
             //Register your Web API controllers.
             builder.RegisterType<CountryController>().WithParameter("bl", (new Process.CountryProcess(new Repository.DAL.Country()))).InstancePerRequest();// (new Process.CountryProcess(new Repository.DAL.Country()))).InstancePerRequest();
 
-            builder.RegisterType<ClientController>().WithParameter("bl",new Process.ClientProcess(new Repository.DAL.Client())).InstancePerRequest();
-            builder.RegisterType<MediaChannelController>().WithParameter("bl",new Process.MediaChannelProcess(new Repository.DAL.MediaChannel())).InstancePerRequest();
-            builder.RegisterType<SupplierController>().WithParameter("bl",new Process.SupplierProcess(new Repository.DAL.Supplier())).InstancePerRequest();
+            builder.RegisterType<ClientController>().WithParameter("bl", new Process.ClientProcess(new Repository.DAL.Client())).InstancePerRequest();
+            builder.RegisterType<MediaChannelController>().WithParameter("bl", new Process.MediaChannelProcess(new Repository.DAL.MediaChannel())).InstancePerRequest();
+            builder.RegisterType<SupplierController>().WithParameter("bl", new Process.SupplierProcess(new Repository.DAL.Supplier())).InstancePerRequest();
             builder.RegisterType<CampaignController>().WithParameter("bl", new Process.CampaignProcess(new Repository.DAL.Campaign())).InstancePerRequest();
+            builder.RegisterType<AdController>().WithParameter("bl", new Process.AdProcess(new Repository.DAL.Ad())).InstancePerRequest();
 
             //Set the dependency resolver to be Autofac.  
             Container = builder.Build();

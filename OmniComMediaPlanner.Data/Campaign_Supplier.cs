@@ -14,7 +14,11 @@ namespace OmniComMediaPlanner.Repository
     
     public partial class Campaign_Supplier
     {
+        public int Id { get; set; }
         public int Campaign_Id { get; set; }
         public int Supplier_Id { get; set; }
+    
+        public virtual Campaign Campaign { get; set; }
+        public virtual Supplier Supplier { get; set; }
     }
 }
