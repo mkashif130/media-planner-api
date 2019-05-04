@@ -13,7 +13,7 @@ namespace OmniComMediaPlanner.Model
         public int Id { get; set; }
         [JsonProperty("adTitle")]
         public string Title { get; set; }
-        
+        [JsonProperty("mediaChannel")]
         public MediaChannel MediaChannel { get; set; }
         [JsonProperty("supplier")]
         public SupplierModel Supplier { get; set; }
