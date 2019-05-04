@@ -19,6 +19,8 @@ namespace OmniComMediaPlanner.Model
         public Client Client { get; set; }
         [JsonProperty("campaignBudget")]
         public decimal Budget { get; set; }
+        [JsonProperty("remainingBudget")]
+        public decimal? RemainingBudget { get; set; }
         [JsonProperty("fromDate")]
         public DateTime FromDate { get; set; }
         [JsonProperty("toDate")]

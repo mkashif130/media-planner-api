@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MediaPlannerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MediaPlannerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Ad">
           <Key>
             <PropertyRef Name="Id" />
@@ -28,6 +28,7 @@
           <Property Name="Budget" Type="money" Nullable="false" />
           <Property Name="From_Date" Type="datetime" Nullable="false" />
           <Property Name="To_Date" Type="datetime" Nullable="false" />
+          <Property Name="Remaining_Budget" Type="money" />
         </EntityType>
         <EntityType Name="Campaign_Supplier">
           <Key>
@@ -219,8 +220,7 @@
             <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MediaPlannerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -256,6 +256,7 @@
           <NavigationProperty Name="Client" Relationship="Self.FK_Campaign_Client" FromRole="Campaign" ToRole="Client" />
           <NavigationProperty Name="Country1" Relationship="Self.FK_Campaign_Country" FromRole="Campaign" ToRole="Country" />
           <NavigationProperty Name="Campaign_Supplier" Relationship="Self.FK_Campaign_Supplier_Campaign" FromRole="Campaign" ToRole="Campaign_Supplier" />
+          <Property Name="Remaining_Budget" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="Campaign_Supplier">
           <Key>
@@ -479,6 +480,7 @@
           <EntitySetMapping Name="Campaigns">
             <EntityTypeMapping TypeName="MediaPlannerModel.Campaign">
               <MappingFragment StoreEntitySet="Campaign">
+                <ScalarProperty Name="Remaining_Budget" ColumnName="Remaining_Budget" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
                 <ScalarProperty Name="Country" ColumnName="Country" />

@@ -26,12 +26,16 @@ namespace OmniComMediaPlanner.Repository.DAL
                             From_Date = ad.FromDate,
                             To_Date = ad.ToDate,
                             Supplier_Id = ad.Supplier.Id,
-                            MediaChannel_Id = ad.MediaChannel.Id
+                            MediaChannel_Id = ad.Supplier.Channel.Id
                         };
 
                         db.Ads.Add(adEntity);
                         db.SaveChanges();
                         adId = adEntity.Id;
+
+                        var campaign = db.Campaigns.FirstOrDefault(c => c.Id == ad.Campaign.CampaignId);
+                        campaign.Remaining_Budget = campaign.Remaining_Budget - ad.Budget;
+                        db.SaveChanges();
                     }
 
 

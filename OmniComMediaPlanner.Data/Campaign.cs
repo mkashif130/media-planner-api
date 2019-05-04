@@ -27,6 +27,7 @@ namespace OmniComMediaPlanner.Repository
         public decimal Budget { get; set; }
         public System.DateTime From_Date { get; set; }
         public System.DateTime To_Date { get; set; }
+        public Nullable<decimal> Remaining_Budget { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ad> Ads { get; set; }

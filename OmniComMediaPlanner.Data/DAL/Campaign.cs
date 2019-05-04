@@ -27,6 +27,7 @@ namespace OmniComMediaPlanner.Repository.DAL
                                 campaign.Add(new CampaignMode
                                 {
                                     Budget = campaignEntity.Budget,
+                                    RemainingBudget = campaignEntity.Remaining_Budget,
                                     CampaignId = campaignEntity.Id,
                                     Client = new Model.Client { Id = campaignEntity.Client.Id, ClientName = campaignEntity.Client.name },
                                     Country = new Model.CountryModel { Country = campaignEntity.Country1.Name, IsoCode = campaignEntity.Country1.IsoCode },
@@ -67,7 +68,7 @@ namespace OmniComMediaPlanner.Repository.DAL
                         Repository.Campaign campaignEntity = new Repository.Campaign
                         {
                             Budget = campaign.Budget,
-                           
+                            Remaining_Budget = campaign.Budget,
                             Client_Id = clientEntity.Id,
                             Country =countryEntity.IsoCode,
                             From_Date = campaign.FromDate,
